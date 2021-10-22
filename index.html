@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript">
+    function check(){
+        document.getElementById('display').innerHTML=document.getElementById("name").value;
+        document.getElementById('display2').innerHTML=document.getElementById("age").value;
+        document.getElementById('display3').innerHTML=document.getElementById("email").value;
+        document.getElementById('display4').innerHTML=document.getElementById('phone').value;
+        document.getElementById('display5').innerHTML=document.getElementById("address").value;
+        if(document.getElementById('male').checked)
+        {document.getElementById("display6").innerHTML=document.getElementById("male").value;}
+        else if(document.getElementById('female').checked)
+        {document.getElementById("display6").innerHTML=document.getElementById("female").value;}
+        else{document.getElementById("display6").innerHTML="No One Select";}
+        var ele=[]
+        var html=document.getElementById("checkbox1")
+        if(html.checked){
+            ele.push(html.value);
+        }
+        var css=document.getElementById("checkbox2")
+        if(css.checked){
+            ele.push(css.value);
+        }
+        var javascript=document.getElementById("checkbox3")
+        if(javascript.checked){
+            ele.push(javascript.value);
+        }
+        if(ele.length>0){
+            document.getElementById("p1").innerHTML=ele;
+        }
+        else{
+            document.getElementById("p1").innerHTML="You Not Entered any value";
+        }
+        var selecteddata=document.getElementById("qualification").value;
+        document.getElementById('quality').innerHTML=document.getElementById("qualification").value;
+    }
+    </script>
+    </head>
+    <body>
+    <div class="wrapper">
+        <div class="title">
+           <h2>Registration Form</h2>
+        </div>
+        <div class="form">
+            <div class="input_field">
+                <label>Name</label>
+                <br>
+                <input type="text" class="input" id="name" placeholder="Name" >
+            </div>
+            <div class="input_field">
+                <label>Age</label>
+                <br>
+                <input type="number" class="input" id="age" placeholder="Age" >
+            </div>
+            <div class="input_field">
+                <label>Gender : </label>
+                <label>Male</label>
+                <input type="radio" class="input" id="male" value="Male">
+                <label>Female</label>
+                <input type="radio" class="input" id="female" value="Female">
+            </div>
+            <div class="input_field">
+                <label>EmailAddress</label>
+                <br>
+                <input type="email" class="input" id="email" placeholder="Email ID">
+            </div>
+             <div class="input_field">
+                <label>Educational Qualification : </label>
+                    <select id="qualification">
+                        <option>Choose</option>
+                        <option value="10">10</option>
+                        <option value="+2">+2</option>
+                        <option value="Degree">Degree</option>
+                    </select>
+            </div>
+            <div class="input_field">
+                <label>Skills </label>
+                <br>
+                <input type="checkbox" id="checkbox1" value="HTML" name="html">
+                <label>HTML</label>
+                <br>
+                <input type="checkbox" id="checkbox2" value="CSS" name="css">
+                <label>CSS</label>
+                <br>
+                <input type="checkbox" id="checkbox3" value="JavaScript" name="javascript">
+                <label>JavaScript</label>
+                <br>
+            </div>
+            <div class="input_field">
+                <label>Phone Number</label>
+                <br>
+                <input type="number" class="input" id="phone" placeholder="Phone Number">
+            </div>
+            <div class="input_field">
+                <label>Address</label>
+                <br>
+                <textarea class="textarea" id="address"></textarea>
+            </div>
+            <div class="input_field">
+                <label>Upload CV</label>
+                <input type="file" class="input">
+            </div>
+            <div class="input_field terms">
+                <label class="check">
+                    <input type="checkbox">
+                    <span class="check mark"></span>
+                </label>
+                <br>
+                <p> Agreed to terms and conditions </p>
+            </div>
+            <div class="input_field">
+                <br>
+                <input type="submit" value="Register" class="btn" id="sub_btn" onclick= "check();" >
+            </div>
+        </div>
+    </div>
+    <div name=msg>
+        <p>Name:
+            <span id="display"></span>
+        </p>
+        <p>Age:
+            <span id="display2"></span>
+        </p>
+        <p>Email Id:
+            <span id="display3"></span>
+        </p>
+        <p>Phone no:
+            <span id="display4"></span>
+        </p>
+        <p>Address:
+            <span id="display5"></span>
+        </p>        
+        <p>Gender:
+            <span id="display6"></span>
+        </p>
+        <p>Skills;
+            <span id="p1"></span>
+        </p>
+        <p>Educational Qualification:
+            <span id="quality"></span>
+        </p>
+        <br>
+        <br>
+    </div>
+    </body>
+</html>
